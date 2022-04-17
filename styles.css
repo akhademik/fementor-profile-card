@@ -1,0 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  /* GLOBAL VARIABLES  */
+  --clr-dark-cyan: hsl(185, 75%, 39%);
+  --clr-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --clr-dark-grayish-blue: hsl(227, 10%, 46%);
+  --clr-dark-gray: hsl(0, 0%, 59%);
+
+  font-family: "Kumbh Sans", sans-serif;
+}

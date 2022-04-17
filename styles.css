@@ -11,3 +11,30 @@
 
   font-family: "Kumbh Sans", sans-serif;
 }
+
+body {
+  margin: 0;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+}
+.main-card {
+  margin: 14rem 2rem;
+  position: relative;
+  width: 400px;
+  height: 700px;
+  border: 2px solid red;
+  overflow: hidden;
+}
+.top-img {
+  position: absolute;
+  /* top: -26%;
+  left: -52%; */
+  width: 100%;
+}
+.bottom-img {
+  position: absolute;
+  bottom: -30%;
+  left: 49%;
+  width: 100%;
+}

@@ -9,63 +9,38 @@
   --clr-dark-grayish-blue: hsl(227, 10%, 46%);
   --clr-dark-gray: hsl(0, 0%, 59%);
 }
+html {
+  height: 100%;
+}
 
 body {
-  margin: 0;
   background-color: var(--clr-dark-cyan);
   display: flex;
-  justify-content: center;
+  align-items: center;
   font-family: "Kumbh Sans", sans-serif;
+  min-height: 100vh;
+
+  background-image: url("./images/bg-pattern-top.svg"),
+    url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 48vw bottom 29vh, left 48vw top 28vh;
 }
 
-/* FIX IT LATER */
 .main-card {
-  margin: 2rem 2rem;
-  position: relative;
-  /* width: calc(100% - 4em); */
-  /* height: 700px; */
-  /* border: 2px solid red; */
-  /* overflow: hidden; */
+  margin: 0 auto;
 }
-.main-card::before {
-  /* display: flex; */
-  content: "";
-  position: absolute;
-  background-image: url("./images/bg-pattern-top.svg");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  width: 50%;
-  height: 50%;
-  top: 0;
-  left: 0;
-  transform: translate(-25%, -25%);
-}
-.main-card::after {
-  content: "";
-  position: absolute;
-  background-image: url("./images/bg-pattern-bottom.svg");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  width: 50%;
-  height: 50%;
-  bottom: 0;
-  right: 0;
-  transform: translate(75%, 75%);
-}
-
-/* FIX ABOVE LATER */
 .wrapper {
   background-color: white;
   border-radius: 0.8em;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 .header__img {
   background-image: url(./images/bg-pattern-card.svg);
   background-color: var(--clr-dark-cyan);
   background-blend-mode: overlay;
-  border-radius: 0.8em 0.8em 0 0;
   opacity: 0.7;
   min-width: 15rem;
   min-height: 8rem;
@@ -73,12 +48,13 @@ body {
 .header__avatar {
   display: flex;
   justify-content: center;
-  margin-top: -3rem;
   position: relative;
 }
 .avatar__img {
-  border: 5px solid white;
+  height: 100px;
+  border: 4px solid white;
   border-radius: 50%;
+  margin-top: -52px;
 }
 .card__content {
   display: flex;
@@ -142,4 +118,10 @@ li:nth-child(2)::after {
 }
 li:last-child::after {
   content: "Photos";
+}
+
+@media (min-width: 40em) {
+  .body {
+    background-position: right 49vw bottom 41vh, left 45vw top 50vh;
+  }
 }

@@ -8,33 +8,138 @@
   --clr-dark-desaturated-blue: hsl(229, 23%, 23%);
   --clr-dark-grayish-blue: hsl(227, 10%, 46%);
   --clr-dark-gray: hsl(0, 0%, 59%);
-
-  font-family: "Kumbh Sans", sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: gray;
+  background-color: var(--clr-dark-cyan);
   display: flex;
   justify-content: center;
+  font-family: "Kumbh Sans", sans-serif;
 }
+
+/* FIX IT LATER */
 .main-card {
-  margin: 14rem 2rem;
+  margin: 2rem 2rem;
   position: relative;
-  width: 400px;
-  height: 700px;
-  border: 2px solid red;
-  overflow: hidden;
+  /* width: calc(100% - 4em); */
+  /* height: 700px; */
+  /* border: 2px solid red; */
+  /* overflow: hidden; */
 }
-.top-img {
+.main-card::before {
+  /* display: flex; */
+  content: "";
   position: absolute;
-  /* top: -26%;
-  left: -52%; */
-  width: 100%;
+  background-image: url("./images/bg-pattern-top.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  transform: translate(-25%, -25%);
 }
-.bottom-img {
+.main-card::after {
+  content: "";
   position: absolute;
-  bottom: -30%;
-  left: 49%;
+  background-image: url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  width: 50%;
+  height: 50%;
+  bottom: 0;
+  right: 0;
+  transform: translate(75%, 75%);
+}
+
+/* FIX ABOVE LATER */
+.wrapper {
+  background-color: white;
+  border-radius: 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header__img {
+  background-image: url(./images/bg-pattern-card.svg);
+  background-color: var(--clr-dark-cyan);
+  background-blend-mode: overlay;
+  border-radius: 0.8em 0.8em 0 0;
+  opacity: 0.7;
+  min-width: 15rem;
+  min-height: 8rem;
+}
+.header__avatar {
+  display: flex;
+  justify-content: center;
+  margin-top: -3rem;
+  position: relative;
+}
+.avatar__img {
+  border: 5px solid white;
+  border-radius: 50%;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: var(--clr-dark-gray);
+}
+.card__content p {
+  color: var(--clr-dark-gray);
+}
+.card__content p::before {
+  content: "Victor Crest";
+  color: var(--clr-dark-desaturated-blue);
+  font-weight: 700;
+  padding-right: 0.5rem;
+}
+.card__content p::after {
+  content: "London";
+  color: var(--clr-dark-gray);
+  font-weight: 400;
+  font-size: 0.75rem;
+  display: block;
+}
+.card__line {
+  height: 0.5px;
   width: 100%;
+  background-color: var(--clr-dark-gray);
+  opacity: 0.4;
+}
+.stats__card {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  color: var(--clr-dark-desaturated-blue);
+  font-size: 1rem;
+}
+.stats__card li {
+  padding: 1rem 2rem 1rem 0;
+}
+.stats__card li:last-child {
+  padding-right: 0;
+}
+
+.stats__card li::after {
+  display: block;
+  text-align: center;
+  color: var(--clr-dark-gray);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+}
+li:first-child::after {
+  content: "Followers";
+}
+li:nth-child(2)::after {
+  content: "Likes";
+}
+li:last-child::after {
+  content: "Photos";
 }
